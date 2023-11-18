@@ -1,5 +1,5 @@
 const Joi = require("joi");
-const { emailRegexp } = require("../models/users");
+const { emailRegexp } = require("../models/user");
 
 const registerValidation = Joi.object({
   name: Joi.string().required().messages({

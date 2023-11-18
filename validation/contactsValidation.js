@@ -12,6 +12,7 @@ const contactsValidation = Joi.object({
   phone: Joi.string().required().messages({
     "any.required": `Missing required phone field`,
   }),
+  favorite: Joi.boolean().optional(),
 });
 
 const updateFavorites = Joi.object({
