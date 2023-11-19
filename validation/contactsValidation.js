@@ -1,6 +1,6 @@
 const Joi = require("joi");
 
-const validationSchema = Joi.object({
+const contactsValidation = Joi.object({
   name: Joi.string().required().messages({
     "any.required": `Missing required name field`,
   }),
@@ -12,6 +12,16 @@ const validationSchema = Joi.object({
   phone: Joi.string().required().messages({
     "any.required": `Missing required phone field`,
   }),
+  favorite: Joi.boolean().optional(),
 });
 
-module.exports = validationSchema;
+const updateFavorites = Joi.object({
+  favorite: Joi.boolean().required().messages({
+    "any.required": `Missing field favorite`,
+  }),
+});
+
+module.exports = {
+  contactsValidation,
+  updateFavorites,
+};
